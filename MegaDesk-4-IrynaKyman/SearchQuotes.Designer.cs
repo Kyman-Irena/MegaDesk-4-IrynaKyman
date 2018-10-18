@@ -72,6 +72,7 @@
             this.SearchResultsListView.Size = new System.Drawing.Size(770, 192);
             this.SearchResultsListView.TabIndex = 3;
             this.SearchResultsListView.UseCompatibleStateImageBehavior = false;
+            this.SearchResultsListView.View = System.Windows.Forms.View.Details;
             // 
             // SearchQuotes
             // 
