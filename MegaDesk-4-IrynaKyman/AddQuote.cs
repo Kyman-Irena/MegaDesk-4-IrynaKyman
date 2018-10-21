@@ -36,6 +36,19 @@ namespace MegaDesk_4_IrynaKyman
                
         private void CalculateBtn_Click(object sender, EventArgs e)
         {
+            if (int.TryParse(WidthTextBox.Text, out int WidthInput))
+            {
+                if (WidthInput < Desk.MINWIDTH || WidthInput > Desk.MAXWIDTH)
+                {
+                    MessageBox.Show("The width of the desk should be more than 24 and less than 96 inches");
+                    WidthTextBox.Text = String.Empty;
+                    WidthTextBox.Focus();
+
+                }
+                else
+                { }
+            }
+
             try
             {
                 CustomerName = CustomerNameTextBox.Text;
@@ -67,12 +80,13 @@ namespace MegaDesk_4_IrynaKyman
                 using (StreamWriter swa = File.AppendText("quotes.txt")) { swa.WriteLine(DeskRecord); }
                 // display quote  
 
-               // DeskQuoteView NewOrderView = new DeskQuoteView(NewQuote);
+                
 
-               // var MainMenu = (MainMenu)Tag;
-                //{ Tag = MainMenu; };
-                //NewOrderView.Show(MainMenu);
-                //this.Close();
+                var MainMenu = (MainMenu)Tag;
+                DisplayQuote displayQuote = new DisplayQuote(NewQuote)
+                {Tag = MainMenu};
+                displayQuote.Show();
+                Close();
             }
             catch (Exception ex)
             {

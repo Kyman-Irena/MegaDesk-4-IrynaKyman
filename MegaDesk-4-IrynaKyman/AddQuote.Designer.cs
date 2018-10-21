@@ -156,6 +156,7 @@
             // 
             this.NumberOfDrawers.FormattingEnabled = true;
             this.NumberOfDrawers.Items.AddRange(new object[] {
+            "0",
             "1",
             "2",
             "3",

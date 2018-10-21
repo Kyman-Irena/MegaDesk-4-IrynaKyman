@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MegaDesk_4_IrynaKyman
 {
-    class DeskQuote
+    public class DeskQuote
     {
         #region member variables
         //A desk quote description
@@ -55,13 +55,14 @@ namespace MegaDesk_4_IrynaKyman
 
         private int SurfaceAreaCost()
         {
+            
             if (SurfaceArea>BIG_SIZE)
             {
                 return (SurfaceArea - BIG_SIZE) * PRICE_PER_SURFACEAREA;
             }
             else
             {
-                return SurfaceArea;
+                return 0;
             }
         }
 
